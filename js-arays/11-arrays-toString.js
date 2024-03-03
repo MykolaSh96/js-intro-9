@@ -11,3 +11,6 @@ console.log(numbers); // [ 10, 15, 20, 25 ]
 
 console.log(stringObjects); // 'Mouse,Computer,Remote'
 console.log(stringNumbers); // '10 --- 15 --- 20 --- 25'
+
+
+

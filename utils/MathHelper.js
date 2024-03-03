@@ -5,3 +5,7 @@ function generateRandomNumber(a, b) {
 }
 // Exporting your reusable methods
 module.exports.generateRandomNumber = generateRandomNumber;
+
+
+
+//const {generateRandomNumber} = require('../utils/MathHelper.js');

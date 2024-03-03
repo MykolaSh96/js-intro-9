@@ -22,3 +22,4 @@ const nums = [ 5, 2, 22, 1, 100 ];
 nums.sort((a, b) => a - b);
 
 console.log(nums); // [ 1, 2, 5, 22, 100 ] ascending
+
