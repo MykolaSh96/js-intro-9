@@ -1,0 +1,13 @@
+
+
+let persone_name = 'John';
+let persone_age  = 25;
+let persone_fav_number = 7;
+
+const persone = {
+    firstName: 'John',
+    lastName: 'Doe',
+    spouse: 'Jane Doe',
+    age: 25,
+    favNumber = 7
+};
