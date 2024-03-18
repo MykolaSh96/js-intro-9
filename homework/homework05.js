@@ -335,6 +335,7 @@ console.log(isPrime(-5))
 console.log(isPrime(0))    
 console.log(isPrime(1))    
 
+
 console.log('-------------Task11-------------');
 /*
 Requirement:
@@ -463,6 +464,27 @@ isEmailValid("johndoe@@gmail.com") 	-> false
 isEmailValid("johndoe@gmail.com") 		-> true
 
 */
+const isEmailValid = (email) => {
+	if(email.includes(' ')) return false;
+	if(email.split('@').length !== 2) return false
+ 
+	
+	const beginning = email.split('@')[0]
+	const middle = email.split('@')[1].split('.')[0]
+	const end = email.split('@')[1].split('.')[1]
+ 
+	if(beginning === undefined || middle === undefined || end === undefined) return false
+ 
+   return (beginning.length >= 2 && middle.length >= 2 && end.length >= 2)
+ }
+ 
+ console.log(isEmailValid(""))//false
+ console.log(isEmailValid("@gmail.com"))//false
+ console.log(isEmailValid("johndoe@yahoo"))//false
+ console.log(isEmailValid("johndoe@.com"))//false
+ console.log(isEmailValid("johndoe@a.com"))//false
+ console.log(isEmailValid("johndoe@@gmail.com"))//false
+ console.log(isEmailValid("johndoe@gmail.com"))//true
 
 
 
@@ -488,3 +510,35 @@ isPasswordValid("Chicago123$") 		-> true
 isPasswordValid("Test1234#") 		-> true
 
 */
+
+const isPasswordValid = (pass) => {
+	if(pass.includes(' ')) return false;
+	if(pass.length < 8 || pass.length > 16) return false
+ 
+	let hasUppercase = false;
+	let hasLowercase = false;
+	let hasDigit = false;
+	let hasSpecial = false;
+ 
+	for(char of pass){
+	 if(char >= 'A' && char <= "Z") hasUppercase = true;
+	 else if(char >= 'a' && char <= "z") hasLowercase = true;
+	 else if(char >= '0' && char <= "9") hasDigit = true;
+	 else hasSpecial = true;
+	}
+ 
+ return (hasUppercase && hasLowercase && hasDigit && hasSpecial)
+	
+ }
+
+ console.log(isPasswordValid(""));  // false
+ console.log(isPasswordValid("abcd"));  // false
+ console.log(isPasswordValid("abcd1234"));  // false
+ console.log(isPasswordValid("Abcd1234"));  // false
+ console.log(isPasswordValid("Chicago12345US!#$%"));  // false
+ console.log(isPasswordValid("Abcd1234$"));  // true
+ console.log(isPasswordValid("Chicago123$"));  // true
+ console.log(isPasswordValid("Test1234#"));  // true
+
+
+ 

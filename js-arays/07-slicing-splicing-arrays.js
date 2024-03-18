@@ -22,3 +22,4 @@ numbers.splice(-1, 3, 100, 101, 102);
 
 console.log(numbers.length)
 console.log(numbers);
+

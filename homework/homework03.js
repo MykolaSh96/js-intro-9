@@ -170,11 +170,6 @@ console.log(swapfirstLastWord("Hello"));
 
 
 
-
-
-
-
-
 console.log('\n---------------Task 5-----------------');
 
 function firstWord(word) {
