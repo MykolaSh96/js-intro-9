@@ -155,6 +155,7 @@ return count4;
 console.log(countWords("     Javascript is fun   ") );
 console.log(countWords("Cypress is an UI automation tool.   ") );
 console.log(countWords("1 2 3 4"));
+console.log(countWords(""));
 
 
 
@@ -310,7 +311,7 @@ Examples:
 
 isPrime(5) 		-> true
 isPrime(2) 		-> true
-isPrime(29) 		-> true
+isPrime(29) 	-> true
 isPrime(-5)		-> false
 isPrime(0)		-> false
 isPrime(1)		-> false

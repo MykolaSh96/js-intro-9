@@ -120,3 +120,6 @@ if(number % 2 === 0) return count+1;
 else return count;
 
 return number % 2 === 0 ? count + 1 : count
+
+
+
