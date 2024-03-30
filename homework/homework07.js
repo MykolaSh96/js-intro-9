@@ -39,6 +39,16 @@ console.log(hasUpperCase("AA")); // true
 console.log(hasUpperCase("")); // false
 
 
+const hasUpperCase = str => {
+    if (str.split('').filter(x => x >= 'A' && x <= 'Z').length > 0) return true
+    else return false;
+}
+
+console.log(hasUpperCase("javascript")); // false
+console.log(hasUpperCase("John")); // true
+console.log(hasUpperCase("$125.0")); // false
+console.log(hasUpperCase("")); // false
+
 
 // Tack 2
 /*
@@ -278,5 +288,4 @@ function categorizeCharacters(str) {
 console.log(categorizeCharacters("1234"));       // [ '' , '1234', '' ]
 console.log(categorizeCharacters("abc123$#%"));  // [ 'abc', '123', '$#%' ]
 console.log(categorizeCharacters("12ab$%3c%")); // [ 'abc', '123', '$%%' ]
-
 

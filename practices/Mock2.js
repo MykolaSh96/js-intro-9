@@ -305,7 +305,7 @@ countPos([0, -1, -2, -3])       -> 0
 */
 
 function countPos(num) {
-    count = 0;
+   let count = 0;
     for (const positive of num) {
         if (positive > 0) count++;
     }
@@ -316,6 +316,14 @@ console.log(countPos([-45, 0, 0, 34, 5, 67]));
 console.log(countPos([-23, -4, 0, 2, 5, 90, 123]));
 console.log(countPos([0, -1, -2, -3]));
 
+//2nd solution
+function countPos(arr) {
+    return arr.filter(num => num > 0).length
+};
+
+console.log(countPos([-45, 0, 0, 34, 5, 67]));
+console.log(countPos([-23, -4, 0, 2, 5, 90, 123]));
+console.log(countPos([0, -1, -2, -3]));
 
 // Task 10
 
@@ -337,7 +345,6 @@ getEvens(3, 3)    -> [ ]
 */
 function getEvens(start, end) {
     const evens = [];
-
 
     for (let i = start; i <= end; i++) {
 
@@ -698,8 +705,16 @@ getDuplicates([ 1, 2, 5, 0, 7 ]) -> [ ]
 getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ]) -> [ 'foo', 'a’ ]
 getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ]) -> [ ]
 */
-
-
+function getDuplicates(arr){
+    const newArr = [];
+    for(let i = 0; i < arr.length; i ++){
+        if(arr.includes(arr[i]))newArr.push(arr[i]);
+    }
+    return newArr
+}
+console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]))                              //-> [ 0, -7 ]
+console.log(getDuplicates([ 1, 2, 5, 0, 7 ]))                                               //-> [ ]
+                               //-> [ ]
 // Task 21 
 
 /*
@@ -766,8 +781,6 @@ reverseStringWords("") -> ""
 reverseStringWords(" ") -> ""
 */
 
-
-
 function reverseStringWords(str){
  const words = str.split('')
 const reversedWords = words. map( word => word.split('')).reverse().join('');
@@ -796,11 +809,112 @@ countConsonants("Hello World") -> 8
 countConsonants("JavaScript is fun") -> 12
 countConsonants("") -> 0
 */
+function countConsonants(str){
+    let vovel = 'AEOUIaeoui';
+    str = str.split('');
+    let count = 0;
+
+    for(i = 0; i < str.length; i++){
+        if(!vovel.includes(str[i])){
+            count++;
+        }
+    }
+    return count;
+}
+
+// Test cases
+console.log(countConsonants("Hello"));             // 3
+console.log(countConsonants("Hello World"));       // 8
+console.log(countConsonants("JavaScript is fun")); // 12
+console.log(countConsonants(""));                 // 0
+
+//Tack 24
+/*
+Count Multiple Words
+Write a function named as countMultipleWords() which takes an array as an argument and 
+returns the count of the elements that has multiple words when invoked.
+NOTE: Be careful about the extra whitespaces before and after the array element.
+
+Examples:
+countMultipleWords([ "foo", "", " ", "foo bar", " foo" ]) -> 1
+countMultipleWords([ "foo", "bar", "foobar", " foobar " ]) -> 0
+countMultipleWords([ "f o o", "b a r", "foo bar", " foo bar " ]) -> 4
+countMultipleWords([ ]) -> 0
+
+*/
+function countMultipleWords(arr){
+    let count = 0;
+   
+    for(const elrment of arr){
+        
+        let word = elrment.trim().split(' ');
+           if(word.length > 1){
+            count++;
+           }
+        }
+        return count
+     }
+ 
+
+// Test cases
+console.log(countMultipleWords(["foo", "", " ", "foo bar", " foo"]));   // 1
+console.log(countMultipleWords(["foo", "bar", "foobar", " foobar "])); // 0
+console.log(countMultipleWords(["f o o", "b a r", "foo bar", " foo bar "])); // 4
+console.log(countMultipleWords([])); // 0
+
+//2nd Solution
+
+function countMultipleWords(arr) {
+    let countMulWord = 0
+    for (let i = 0; i < arr.length; i++) {
+        let word = arr[i].trim();
+        if (word.includes(' ')) countMulWord++;
+    }
+    return countMulWord;
+}
+
+console.log(countMultipleWords(["foo", "", " ", "foo bar", " foo"]));   // 1
+console.log(countMultipleWords(["foo", "bar", "foobar", " foobar "])); // 0
+console.log(countMultipleWords(["f o o", "b a r", "foo bar", " foo bar "])); // 4
+console.log(countMultipleWords([])); // 0  
 
 
+//Task 25
+/*
+FizzBuzz
+Write a function named as fizzBuzz() which takes 2 number arguments and returns a string 
+composed with below requirements when invoked.
+• You need to find all the numbers within the range of given 2 numbers (both inclusive) 
+and store them in a string from smallest to greatest number with a ' | ' separator for each 
+number.
+• You will need to convert numbers divisible by 3 to 'Fizz'
+• You will need to convert numbers divisible by 5 to 'Buzz'
+• You will need to convert numbers divisible by both 3 and 5 to 'FizzBuzz’
+• The rest will stay the same.
+NOTE: Make your code dynamic that works for any numbers.
+Assume you will not be given negative numbers.
+Examples:
+fizzBuzz(13, 18) -> "13 | 14 | FizzBuzz | 16 | 17 | Fizz"
+fizzBuzz(12, 5) -> "Buzz | Fizz | 7 | 8 | Fizz | Buzz | 11 | Fizz"
+fizzBuzz(5, 5) -> "Buzz"
+fizzBuzz(9, 6) -> "Fizz | 7 | 8 | Fizz"
+*/
 
+function fizzBuzz(num1, num2) {
 
+    let arr = [];
 
+    for(let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++){
+        if(i % 5 === 0 && i % 3 === 0) arr.push('FizzBuzz');
+        else if(i % 5 === 0) arr.push('Buzz');
+        else if(i % 3 === 0) arr.push('Fizz');
+        else arr.push(i);
+    };
 
-
-
+    return arr.join(" | ");
+};
+// Test cases
+console.log(fizzBuzz(13, 18)); // "13 | 14 | FizzBuzz | 16 | 17 | Fizz"
+console.log(fizzBuzz(12, 5));  // "Buzz | Fizz | 7 | 8 | Fizz | Buzz | 11 | Fizz"
+console.log(fizzBuzz(5, 5));   // "Buzz"
+console.log(fizzBuzz(9, 6));   // "Fizz | 7 | 8 | Fizz"
