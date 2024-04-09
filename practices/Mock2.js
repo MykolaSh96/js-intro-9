@@ -210,7 +210,7 @@ console.log(replaceFirstLast("Hello"));
 console.log(replaceFirstLast("Tech Global"));
 
 
-
+// Task- 7
 /*
 Swap First and Last Four Characters 
 Write a function named as swap4() which takes a string word as an argument and returns the 
@@ -305,7 +305,7 @@ countPos([0, -1, -2, -3])       -> 0
 */
 
 function countPos(num) {
-   let count = 0;
+    let count = 0;
     for (const positive of num) {
         if (positive > 0) count++;
     }
@@ -540,11 +540,11 @@ count3OrLess("") -> 0
 */
 
 function count3OrLess(str) {
-    
+
     const words = str.trim().split(' ');
     let count = 0;
-    
-    
+
+
     for (const word of words) {
         if (word.length <= 3) {
             count++;
@@ -577,7 +577,7 @@ removeExtraSpaces("") -> ""
 */
 
 
-function removeExtraSpaces(str){
+function removeExtraSpaces(str) {
     const word = str.split(' ');
 
     return word.filter(word => word !== '').join(' ');
@@ -592,20 +592,20 @@ console.log(removeExtraSpaces("")); // Output: ""
 
 // Second Solution
 
-function removeExtraSpaces(str){
- 
+function removeExtraSpaces(str) {
+
     return str.trim();
-    }
-    
-    // Test cases
-    console.log(removeExtraSpaces("Hello  ")); // Output: "Hello"
-    console.log(removeExtraSpaces("   Hello  World   ")); // Output: "Hello World"
-    console.log(removeExtraSpaces("    JavaScript is fun")); // Output: "JavaScript is fun"
-    console.log(removeExtraSpaces("")); // Output: ""
+}
+
+// Test cases
+console.log(removeExtraSpaces("Hello  ")); // Output: "Hello"
+console.log(removeExtraSpaces("   Hello  World   ")); // Output: "Hello World"
+console.log(removeExtraSpaces("    JavaScript is fun")); // Output: "JavaScript is fun"
+console.log(removeExtraSpaces("")); // Output: ""
 
 
 
-    // Task 18 
+// Task 18 
 
 /*
 Middle Number
@@ -620,11 +620,11 @@ middleInt(1, 1, 1) -> 1
 middleInt(-1, 25, 10) -> 10
 */
 
-function middleInt(num1, num2,num3){
+function middleInt(num1, num2, num3) {
     const max = Math.max(num1, num2, num3)
     const min = Math.min(num1, num2, num3)
-    const midle = num1 + num2 + num3 -max - min;
-    
+    const midle = num1 + num2 + num3 - max - min;
+
     return midle;
 }
 // Test cases
@@ -635,8 +635,8 @@ console.log(middleInt(1, 1, 1)); // Output: 1
 console.log(middleInt(-1, 25, 10)); // Output: 10
 
 
-function middleInt(num1, num2, num3){
-    const nums = [ num1, num2, num3];
+function middleInt(num1, num2, num3) {
+    const nums = [num1, num2, num3];
 
     nums.sort((a, b) => a - b);
 
@@ -690,6 +690,19 @@ firstDuplicate([ 1, 2, 3]) -> -1
 firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) -> -1
 */
 
+
+
+
+//Examples:
+console.log(firstDuplicate([3, 7, 10, 0, 3, 10]));  //-> 3
+console.log(firstDuplicate([5, 7, 7, 0, 5, 10]));  //-> 5
+console.log(firstDuplicate([5, '5', 3, 7, 4]));  //-> -1
+console.log(firstDuplicate([123, 'abc', '123', 3, 'abc']));  //-> 'abc'
+console.log(firstDuplicate([1, 2, 3]));  //-> -1
+console.log(firstDuplicate(['foo', 'abc', '123', 'bar']));  //-> -1
+
+
+
 // Task 20 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 /*
@@ -699,22 +712,21 @@ duplicated elements in the array when invoked.
 NOTE: Make your code dynamic that works for any array and return empty array if there are no 
 duplicates in the array. For two elements to be considered as duplicated, value and data types 
 of the elements must be same.
+
 Examples:
 getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]) -> [ 0, -7 ]
 getDuplicates([ 1, 2, 5, 0, 7 ]) -> [ ]
 getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ]) -> [ 'foo', 'a’ ]
 getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ]) -> [ ]
 */
-function getDuplicates(arr){
-    const newArr = [];
-    for(let i = 0; i < arr.length; i ++){
-        if(arr.includes(arr[i]))newArr.push(arr[i]);
-    }
-    return newArr
-}
-console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]))                              //-> [ 0, -7 ]
-console.log(getDuplicates([ 1, 2, 5, 0, 7 ]))                                               //-> [ ]
-                               //-> [ ]
+
+
+//Examples:
+console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])                ); //-> [ 0, -7 ]
+console.log(getDuplicates([ 1, 2, 5, 0, 7 ])                                 ); //-> [ ]
+console.log(getDuplicates(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ])  ); //-> [ 'foo', 'a’ ]
+console.log(getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])                  ); //-> [ ]
+
 // Task 21 
 
 /*
@@ -730,13 +742,13 @@ countVowels("JavaScript is fun") 		-> 5
 countVowels("") 			-> 0
 
 */
-function countVowels(str){
+function countVowels(str) {
     let count = 0;
-    
+
     const words = str.toLowerCase();
 
-    for(const vovels of words){
-        if(vovels.includes('a') || vovels.includes('e') ||vovels.includes('o') ||vovels.includes('u') ||vovels.includes('i') ) count ++;
+    for (const vovels of words) {
+        if (vovels.includes('a') || vovels.includes('e') || vovels.includes('o') || vovels.includes('u') || vovels.includes('i')) count++;
     }
     return count;
 }
@@ -748,14 +760,14 @@ console.log(countVowels(""));// 0
 
 
 // Second solution
-function countVowels(string){
+function countVowels(string) {
     let count2 = 0;
     let vowel = 'AEOUIaeoui';
-    for(const vowels of string){ 
-        if( vowel.includes(vowels)) count2++;
-        }
-    
-return count2;
+    for (const vowels of string) {
+        if (vowel.includes(vowels)) count2++;
+    }
+
+    return count2;
 }
 
 console.log(countVowels("Hello"));
@@ -781,11 +793,11 @@ reverseStringWords("") -> ""
 reverseStringWords(" ") -> ""
 */
 
-function reverseStringWords(str){
- const words = str.split('')
-const reversedWords = words. map( word => word.split('')).reverse().join('');
- 
-return reversedWords;
+function reverseStringWords(str) {
+    const words = str.split('')
+    const reversedWords = words.map(word => word.split('')).reverse().join('');
+
+    return reversedWords;
 }
 
 console.log(reverseStringWords("Hello World")); // Output: "olleH dlroW"
@@ -793,6 +805,10 @@ console.log(reverseStringWords("I like JavaScript")); // Output: "I ekil tpircSa
 console.log(reverseStringWords("Hello")); // Output: "olleH"
 console.log(reverseStringWords("")); // Output: ""
 console.log(reverseStringWords(" ")); // Output: ""
+
+
+
+
 
 
 
@@ -809,13 +825,13 @@ countConsonants("Hello World") -> 8
 countConsonants("JavaScript is fun") -> 12
 countConsonants("") -> 0
 */
-function countConsonants(str){
+function countConsonants(str) {
     let vovel = 'AEOUIaeoui';
     str = str.split('');
     let count = 0;
 
-    for(i = 0; i < str.length; i++){
-        if(!vovel.includes(str[i])){
+    for (i = 0; i < str.length; i++) {
+        if (!vovel.includes(str[i])) {
             count++;
         }
     }
@@ -842,19 +858,19 @@ countMultipleWords([ "f o o", "b a r", "foo bar", " foo bar " ]) -> 4
 countMultipleWords([ ]) -> 0
 
 */
-function countMultipleWords(arr){
+function countMultipleWords(arr) {
     let count = 0;
-   
-    for(const elrment of arr){
-        
+
+    for (const elrment of arr) {
+
         let word = elrment.trim().split(' ');
-           if(word.length > 1){
+        if (word.length > 1) {
             count++;
-           }
         }
-        return count
-     }
- 
+    }
+    return count
+}
+
 
 // Test cases
 console.log(countMultipleWords(["foo", "", " ", "foo bar", " foo"]));   // 1
@@ -904,10 +920,10 @@ function fizzBuzz(num1, num2) {
 
     let arr = [];
 
-    for(let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++){
-        if(i % 5 === 0 && i % 3 === 0) arr.push('FizzBuzz');
-        else if(i % 5 === 0) arr.push('Buzz');
-        else if(i % 3 === 0) arr.push('Fizz');
+    for (let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++) {
+        if (i % 5 === 0 && i % 3 === 0) arr.push('FizzBuzz');
+        else if (i % 5 === 0) arr.push('Buzz');
+        else if (i % 3 === 0) arr.push('Fizz');
         else arr.push(i);
     };
 
@@ -918,3 +934,501 @@ console.log(fizzBuzz(13, 18)); // "13 | 14 | FizzBuzz | 16 | 17 | Fizz"
 console.log(fizzBuzz(12, 5));  // "Buzz | Fizz | 7 | 8 | Fizz | Buzz | 11 | Fizz"
 console.log(fizzBuzz(5, 5));   // "Buzz"
 console.log(fizzBuzz(9, 6));   // "Fizz | 7 | 8 | Fizz"
+
+// Task-26
+/*
+Palindrome
+Write a function named as isPalindrome() which takes a string word as an argument and 
+returns true if the word is palindrome or returns false otherwise when invoked.
+NOTE: Palindrome: It is a word that is read the same backward as forward
+Examples: kayak, civic, madam
+NOTE: your function should ignore case sensitivity
+
+Examples:
+isPalindrome("Hello") -> false
+isPalindrome("Kayak") -> true
+isPalindrome("civic") -> true
+isPalindrome("abba") -> true
+isPalindrome("ab a") -> false
+isPalindrome("123454321") -> true
+isPalindrome("A") -> true
+isPalindrome("") -> true
+
+*/
+function isPalindrome(str) {
+    str = str.toLowerCase();
+    let palidrome = str.split('').reverse().join('');
+    return str === palidrome
+}
+
+console.log(isPalindrome("Hello")); //-> false
+console.log(isPalindrome("Kayak")); //-> true
+console.log(isPalindrome("civic")); //-> true
+console.log(isPalindrome("abba")); //-> true
+console.log(isPalindrome("ab a")); //-> false
+console.log(isPalindrome("123454321")); //-> true
+console.log(isPalindrome("A")); //-> true
+console.log(isPalindrome("")); //-> true
+
+//Task-27
+
+/*
+Prime Number
+Write a function named as isPrime() which takes a number as an argument and returns true if 
+the number is prime or returns false otherwise when invoked.
+NOTE: Mathematically, Prime number is a number that can be divided only by itself and 1. It 
+cannot be divided by any other number. The smallest prime number is 2 and 2 is the only even 
+prime number.
+Examples: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31…
+NOTE: The smallest prime number is 2 and there is no negative prime numbers.
+
+Examples:
+isPrime(5) -> true
+isPrime(2) -> true
+isPrime(29) -> true
+isPrime(-5) -> false
+isPrime(0) -> false
+isPrime(1) -> false
+*/
+
+
+function isPrime(num) {
+    let countDiv = 0;
+    if (num <= 1) return false;
+    else {
+        for (let i = 3; i < num; i++) {
+            if (num % i === 0) countDiv++;
+        }
+    }
+    return countDiv === 0;
+}
+
+
+
+//Examples:
+console.log(isPrime(5)); //-> true
+console.log(isPrime(2)); //-> true
+console.log(isPrime(29)); //-> true
+console.log(isPrime(-5)); //-> false
+console.log(isPrime(0)); //-> false
+console.log(isPrime(1)); //-> false
+console.log(isPrime(31)); //-> true
+console.log(isPrime(19)); //-> true
+
+
+
+// Task - 28
+
+/*
+Add Two Arrays
+Write a function named add() which takes two array of numbers as argument and returns a new 
+array with sum of given arrays elements.
+NOTE: Be careful about the array sizes as they could be different.
+
+Examples:
+add([3, 0, 0, 7, 5, 10], [6, 3, 2]) -> [9, 3, 2, 7, 5, 10]
+add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]) -> [16, 11, 9, 3, 2, 7, 5, 10, 34]
+add([-5, 6, -3, 11], [5, -6, 3, -11]) -> [0, 0, 0, 0]
+*/
+
+
+function add(arr1, arr2) {
+    let newArr = [];
+    const maxLength = Math.max(arr1.length, arr2.length);
+
+    for(let i = 0; i < arr1.length; i++){
+        const sum =(arr1[i] || 0) + (arr2[i] || 0);
+        newArr.push(sum);
+    }
+    return newArr
+ }
+
+//Examples:
+console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));                   //-> [9, 3, 2, 7, 5, 10]
+console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));  //-> [16, 11, 9, 3, 2, 7, 5, 10, 34]
+console.log(add([-5, 6, -3, 11], [5, -6, 3, -11]));                 //-> [0, 0, 0, 0]
+
+
+//Task-29
+
+/*
+No Elements With A
+Write a function named noA() which takes an array of strings as argument and will return a 
+new array with all elements starting with "A" or "a" replaced with "###".
+
+Examples:
+noA(["javascript", "hello", "123", "xyz"]) -> ["javascript", "hello", "123", "xyz"]
+noA(["apple", "123", "ABC", "javascript"]) -> ["###", "123", "###", "javascript"]
+noA(["apple", "abc", "ABC", "Alex", "A"]) -> ["###", "###", "###", "###", "###"]
+
+*/
+
+function noA(arr) {
+    let newArr = [];
+
+    for (const word of arr) {
+        if (word.charAt(0) === 'A' || word.charAt(0) === 'a') {
+            newArr.push('###')
+        } else {
+            newArr.push(word)
+        }
+    }
+    return newArr
+}
+
+
+// Examples:
+console.log(noA(["javascript", "hello", "123", "xyz"]));  // -> ["javascript", "hello", "123", "xyz"]
+console.log(noA(["apple", "123", "ABC", "javascript"]));  //  -> ["###", "123", "###", "javascript"]
+console.log(noA(["apple", "abc", "ABC", "Alex", "A"]));  //  -> ["###", "###", "###", "###", "###"]
+
+
+
+function noA(arr) {
+    let newArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i][0] === 'A' || arr[i][0] === 'a') {
+            newArr.push('###')
+        } else {
+            newArr.push(arr[i])
+        }
+    }
+    return newArr;
+}
+
+// Examples:
+console.log(noA(["javascript", "hello", "123", "xyz"]));  // -> ["javascript", "hello", "123", "xyz"]
+console.log(noA(["apple", "123", "ABC", "javascript"]));  //  -> ["###", "123", "###", "javascript"]
+console.log(noA(["apple", "abc", "ABC", "Alex", "A"]));  //  -> ["###", "###", "###", "###", "###"]
+
+
+//Task-30
+
+/*
+No Elements Divisible By 3 and 5
+Write a function named no3and5() which takes an array of integer numbers as argument and 
+will return a new array with elements replaced by conditions below.
+
+If element can be divided by 5, replace it with 99
+If element can be divided by 3, replace it with 100
+If element can be divided by both 3 and 5, replace it with 101
+
+Examples:
+no3and5([7, 4, 11, 23, 17]) -> [7, 4, 11, 23, 17]
+no3and5([3, 4, 5, 6]) -> [100, 4, 99, 100]
+no3and5([10, 11, 12, 13, 14, 15]) -> [99, 11, 100, 13, 14, 101]
+*/
+
+function no3and5(arr) {
+    let newArr = [];
+
+    for (const num of arr) {
+        if (num % 3 === 0 && num % 5 === 0) {
+            newArr.push(101);
+        } else if (num % 5 === 0) {
+            newArr.push(99);
+        } else if (num % 3 === 0) {
+            newArr.push(100);
+        } else {
+            newArr.push(num);
+        }
+    }
+    return newArr;
+}
+
+//Examples:
+console.log(no3and5([7, 4, 11, 23, 17])); // -> [7, 4, 11, 23, 17]
+console.log(no3and5([3, 4, 5, 6])); // -> [100, 4, 99, 100]
+console.log(no3and5([10, 11, 12, 13, 14, 15])); // -> [99, 11, 100, 13, 14, 101]
+
+
+// Task 31
+
+/*
+No Elements Equals 13
+Write a function named no13() which takes an array of numbers as argument and return a new 
+array with all 13s replaced with 0s. 
+
+Examples:
+no13([1, 2, 3 ,4]) -> [1, 2, 3 ,4]
+no13([13, 2, 3]) -> [0, 2, 3]
+no13([13, 13, 13 , 13, 13]) -> [0, 0, 0, 0, 0]
+no13([]) -> []
+*/
+
+function no13(arr) {
+    let newArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 13) {
+            newArr.push(0);
+        } else {
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+
+//Examples:
+console.log(no13([1, 2, 3, 4]));//-> [1, 2, 3 ,4]
+console.log(no13([13, 2, 3]));//-> [0, 2, 3]
+console.log(no13([13, 13, 13, 13, 13]));//-> [0, 0, 0, 0, 0]
+console.log(no13([]));//-> []
+
+
+
+// Task-32
+
+/*
+Remove Duplicates
+Write a function named removeDuplicates() which takes an array argument and returns a new 
+array with all the duplicates removed.
+
+Examples:
+removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]) -> [10, 20, 35, 60, 70]
+removeDuplicates([1, 2, 5, 2, 3]) -> [1, 2, 5, 3]
+removeDuplicates([0, -1, -2, -2, -1]) -> [0, -1, -2]
+removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]) -> ["abc", "xyz", "123", "ab", "ABC"]
+removeDuplicates(["1", "2", "3", "2", "3"]) -> ["1", "2", "3"]
+*/
+
+function removeDuplicates(arr) {
+    let newArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (!newArr.includes(arr[i])) {
+            newArr.push(arr[i])
+        }
+    }
+    return newArr;
+}
+
+Examples:
+console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]));// -> [10, 20, 35, 60, 70]
+console.log(removeDuplicates([1, 2, 5, 2, 3]));// -> [1, 2, 5, 3]
+console.log(removeDuplicates([0, -1, -2, -2, -1]));// -> [0, -1, -2]
+console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));// -> ["abc", "xyz", "123", "ab", "ABC"]
+console.log(removeDuplicates(["1", "2", "3", "2", "3"]));// -> ["1", "2", "3"]
+
+
+//Task-33 
+
+/*
+No Digits
+Write a function named noDigit() which takes a string argument and returns a new string with 
+all digits removed from the original string.
+
+Examples:
+noDigit("") -> ""
+noDigit("Javascript") -> "Javascript"
+noDigit("123Hello") -> "Hello"
+noDigit("123Hello World149") -> "Hello World”
+noDigit("123Tech456Global149") -> "TechGlobal"
+*/
+
+function noDigit(str) {
+    str = str.split('');
+    const newArr = [];;
+
+    for (const digit of str) {
+        if (!(digit.charCodeAt(0) >= 48  && digit.charCodeAt(0) <= 57)) {
+            newArr.push(digit);
+        }
+    }
+    return newArr.join('');
+
+}
+
+//Examples:
+console.log(noDigit(""));//-> ""
+console.log(noDigit("Javascript"));//-> "Javascript"
+console.log(noDigit("123Hello"));//-> "Hello"
+console.log(noDigit("123Hello World149"));//-> "Hello World”
+console.log(noDigit("123Tech456Global149"));//-> "TechGlobal"
+
+
+// Task- 34
+
+/*
+No Vowel
+Write a function named noVowel() which takes a string argument and returns a new string 
+with all vowels removed from the original string.
+
+Examples:
+noVowel("TechGlobal") -> "TchGlbl"
+noVowel("AEOxyz") -> "xyz"
+noVowel("Javascript") -> "Jvscrpt"
+noVowel("") -> ""
+noVowel("125$") -> "125$"
+*/
+
+function noVowel(str) {
+    let word = str.split('')
+    let vovel = 'aeiouAEIOU'
+    let newArr = [];
+    for (const char of word) {
+        if (!vovel.includes(char)) {
+            newArr.push(char);
+        }
+    }
+    return newArr.join('');
+}
+
+//Examples:
+console.log(noVowel("TechGlobal")); // -> "TchGlbl"
+console.log(noVowel("AEOxyz")); // -> "xyz"
+console.log(noVowel("Javascript")); // -> "Jvscrpt"
+console.log(noVowel("")); // -> ""
+console.log(noVowel("125$")); // -> "125$"
+
+
+//2nd solution
+
+function noVowel(str){
+  
+    let newStr = '';
+    let vowel = 'aeiouAEIOU'
+
+    for(let i = 0; i < str.length; i++){
+        if(!vowel.includes(str[i])){
+            newStr += str[i]
+        }
+    }
+return newStr;
+}
+
+console.log(noVowel("TechGlobal")); // -> "TchGlbl"
+console.log(noVowel("AEOxyz")); // -> "xyz"
+console.log(noVowel("Javascript")); // -> "Jvscrpt"
+console.log(noVowel("")); // -> ""
+console.log(noVowel("125$")); // -> "125$"
+
+
+
+// Task 35
+
+/*
+Sum Of Digits
+Write a function named sumOfDigits() which takes a string argument and returns sum of all 
+digits from the original string. 
+
+Examples:
+sumOfDigits("Javascript") -> 0
+sumOfDigits("John’s age is 29") -> 11
+sumOfDigits("$125.0") -> 8
+sumOfDigits("") -> 0
+
+*/
+function sumOfDigits(str){
+    let sum = 0;
+    for(let i = 0; i < str.length; i++){
+        if(str[i] >= '0' && str[i] <= '9'){
+            sum += parseInt(str[i]);
+        }
+    }
+    return sum;
+}
+    
+//Examples:
+console.log(sumOfDigits("Javascript")       ); //-> 0
+console.log(sumOfDigits("John’s age is 29") ); //-> 11
+console.log(sumOfDigits("$125.0")           ); //-> 8
+console.log(sumOfDigits("")                 ); //-> 0
+
+
+//Task-36
+
+/*
+Array Factorial
+Write a function named arrFactorial() which takes an array of numbers as argument and return 
+the array with every number replaced with their factorials.
+
+Examples:
+arrFactorial([1, 2, 3 ,4]) -> [1, 2, 6, 24]
+arrFactorial([0, 5]) -> [1,120]
+arrFactorial([5 , 0, 6]) -> [120, 1, 720]
+arrFactorial([]) -> []
+*/
+
+const arrFactorial = (arr) => {
+    return arr.map(num => {
+        let fac = 1;
+        for (let i = 2; i <= num; i++) {
+            fac *= i
+        }
+        return fac;
+    })
+}
+
+// Examples:
+console.log(arrFactorial([1, 2, 3, 4])); // -> [1, 2, 6, 24]
+console.log(arrFactorial([0, 5]));       // -> [1, 120]
+console.log(arrFactorial([5, 0, 6]));    // -> [120, 1, 720]
+console.log(arrFactorial([]));           // -> []
+
+
+function count3OrLess(string){
+    string = string.split(' ')
+    let newStr = 0;
+    for(const word of string){
+          if(word.length >= 3) newStr++;
+    }
+      return newStr;
+  }
+
+ // Examples:
+console.log(count3OrLess("Hello")   			);//-> 0
+console.log(count3OrLess("Hi John")   			);//-> 1
+console.log(count3OrLess("JavaScript is fun")   );//-> 2
+console.log(count3OrLess("My name is John Doe") );//-> 3
+console.log(count3OrLess("")   				    );//-> 0		
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+const num = [2, 4, 9, 5, 1 ];
+num.sort();
+console.log(num)
+
+const add = (x, y) => x + y;
+
+console.log(add(5, 10))
+
+
+// Example of a callback function using Promises
+function getData(callback) {
+    return new Promise((resolve, reject) => {
+        // Simulating fetching data asynchronously
+        setTimeout(() => {
+            const data = [1, 2, 3, 4, 5];
+            resolve(data);
+        }, 2000);
+    });
+}
+
+getData().then(data => {
+    console.log("Data fetched successfully:", data);
+}).catch(error => {
+    console.error("Error fetching data:", error);
+});
+
+
+let x = 10;
+let y = 20;
+obj = {x, y};
+console.log(obj);
+
+
+const arr = [1, 2, 3];
+const newArr = [...arr, 4, 5, 6,];
+console.log(newArr);
+
+const newArr1 = [ 4, 5, 6, ...arr];
+console.log(newArr1);
+
+function HelloW(){
+    console.log('Hello World!')
+};
+
+
+HelloW()

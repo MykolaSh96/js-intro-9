@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navbar1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar1 .logo {
+    margin: 0;
+    font-size: 24px;
+}
+
+.navbar1 nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+nav a {
+   margin-left: 20px;
+   margin-right: 20px;
+}
+
+.navbar1 nav a:hover {
+    color: #ffcc00;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+.project {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #000;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    
+}
+
+button:hover {
+    background-color: #333;    
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar1">
+         <h2 class="logo">My Portfolio</h2>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+    <div id="about" class="content">
+        <h3>About Me</h3>
+        <p>This is where you can write a brief description about yourself.</p>
+        <table>
+            <thead>
+                <th>Skill</th>
+                <th>Proficiency</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Beginner</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h4>Project Title 1</h4>
+            <p>Description of Project 1</p> 
+        </div>
+        <div class="project">
+            <h4>Project Title 2</h4>
+            <p>Description of Project 2</p> 
+        </div>
+    </div>
+    <div id="contact">
+        <h2>Contact Me</h2>
+        <div>
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="fname" placeholder="" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="" required>
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea name="Message" id="message" cols="15" rows="5" required></textarea>
+        </div>
+        <div>
+            <p>Do you like my page?</p>
+            <label>
+                <input type="radio" name="attendance" checked /> Yes
+            </label>
+            <label>
+                <input type="radio" name="attendance" /> No
+            </label>
+        </div>
+        <button>Send</button>
+    </div>
+</body>
+</html>

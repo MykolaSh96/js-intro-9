@@ -335,6 +335,8 @@ console.log(isPrime(29))
 console.log(isPrime(-5))   
 console.log(isPrime(0))    
 console.log(isPrime(1))    
+console.log(isPrime(30))    
+console.log(isPrime(31))    
 
 
 console.log('-------------Task11-------------');
@@ -345,9 +347,9 @@ Write a function named add() which takes two array of numbers as argument and re
 NOTE: Be careful about the array sizes as they could be different.
 
 Examples:
-add([3, 0, 0, 7, 5, 10], [6, 3, 2]​) 		-> [9, 3, 2, 7, 5, 10]
+add([3, 0, 0, 7, 5, 10], [6, 3, 2]​) 		             -> [9, 3, 2, 7, 5, 10]
 add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]) 	-> [16, 11, 9,  3, 2, 7, 5, 10, 34]​
-add([-5, 6, -3, 11], [5, -6, 3, -11]) 		-> [0, 0, 0, 0]
+add([-5, 6, -3, 11], [5, -6, 3, -11]) 		            -> [0, 0, 0, 0]
 
 */
 function add(array1, array2) {

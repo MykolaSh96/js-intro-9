@@ -371,14 +371,14 @@ return newArr;
  
 // Second solution with array function 
 
-const removeDuplicates = (array) => {
-   let newArray = [];
-   for(const element of array){
-       if ((array.indexOf(element) === array.lastIndexOf(element))) newArray.push(element);
-       if((array.indexOf(element) !== array.lastIndexOf(element)) && !(newArray.includes(element))) newArray.push(element);
-   }
-   return newArray;
-};
+// const removeDuplicates = (array) => {
+//    let newArray = [];
+//    for(const element of array){
+//        if ((array.indexOf(element) === array.lastIndexOf(element))) newArray.push(element);
+//        if((array.indexOf(element) !== array.lastIndexOf(element)) && !(newArray.includes(element))) newArray.push(element);
+//    }
+//    return newArray;
+// };
 
  console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])); // [10, 20, 35, 60, 70]
  console.log(removeDuplicates([1, 2, 5, 2, 3])); // [1, 2, 5, 3]

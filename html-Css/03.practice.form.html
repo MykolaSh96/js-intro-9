@@ -1,0 +1,255 @@
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        form legend {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        form div {
+            margin-bottom: 10px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        form input[type="text"],
+        form select {
+            width: calc(100% - 22px);
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        form button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <legend>Contact Form</legend>
+        <div>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" required>
+        </div>
+        <div>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="program">Select Program</label>
+            <select id="program" name="program" required>
+                <option value="Batch 01">Batch 01</option>
+                <option value="Batch 02">Batch 02</option>
+                <option value="Batch 03">Batch 03</option>
+            </select>
+        </div>
+        <div>
+            <label for="program-type">Program Type</label>
+            <select id="program-type" name="program-type" required>
+                <option value="Type 01">Type 01</option>
+                <option value="Type 02">Type 02</option>
+                <option value="Type 03">Type 03</option>
+            </select>
+        </div>
+        <div>
+            <label for="fluency">English Fluency Level</label>
+            <select id="fluency" name="fluency" required>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+        </div>
+        <div>
+            <label for="hear-about">How did you hear about us?</label>
+            <select id="hear-about" name="hear-about" required>
+                <option value="Word of Mouth">Word of Mouth</option>
+                <option value="Online Search">Online Search</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Advertisement">Advertisement</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <button type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+      body {
+        
+        font-family: Arial,  serif;
+        margin: 0;
+        padding: 0;
+      }
+      form{
+        /* max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9; */
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #0935a3;    
+      } 
+      form legend {
+            /* font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+             */
+             color: azure;
+             font-size: 1.5em;
+             font-weight: bold;
+             margin-bottom: 10px;
+        }
+        form div{
+            margin: 15;
+        }
+        form label {
+            /* display: block;
+            margin-bottom: 5px; */
+            color:azure;
+            display: block;
+            margin: 5px;
+        }
+        form input[type="text"],
+         form select {
+            /*width: calc(100% - 22px);
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px; */
+            
+            width: calc(100% - 20px );
+            padding: 10;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        form button {
+            /* padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer; */
+            
+            padding: 10px 40px;
+            background-color: white;
+            color: #0935a3;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            margin: 0 auto;
+            
+            
+        }            
+    
+
+    </style>
+</head>
+<body>
+    <form>
+        <legend>Contact Form</legend>
+        <div>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="">
+        </div>
+        <div>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="">
+        </div>
+        <div>
+            <label for="Phone">Phone</label>
+            <input type="text" id="Phone" name="Phone" placeholder="">
+        </div>
+        <div>
+            <label for="program type">Select Program</label>
+            <select name="program type" id="program type" required>
+                <option value="Softwere Engineer in Test">Softwere Engineer in Test</option>
+                <option value="Cypress Automation with JavaSkript">Cypress Automation with JavaSkript</option>
+                <option value="Playwright Automation with TypeScript">Playwright Automation with TypeScript</option>
+            </select>
+        </div>
+        <div>
+            <label for="Program Type">Program Type</label>
+            <select name="Program Type" id="Program Type">
+                <option value="In-person">In-person</option>
+                <option value="Online">Online</option>
+            </select>
+        </div>
+        <div>
+            <label for="English Fluency Level">English Fluency Level</label>
+            <select name="English Fluency Level" id="English Fluency Level">
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Fluent">Fluent</option>
+            </select>
+        </div>
+        <div>
+            <label for="How did you hear about us?">How did you hear about us?</label>
+            <select name="How did you hear about us?" id="How did you hear about us?">
+                <option value="google search">Google Search</option>
+                <option value="Referal">Referal</option>
+                <option value="Social Media">Social Media</option>
+            </select>
+        </div>
+        <div>
+            <button>SUBMIT</button>
+        </div>
+    </form>
+</body>
+</html>
