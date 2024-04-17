@@ -808,10 +808,6 @@ console.log(reverseStringWords(" ")); // Output: ""
 
 
 
-
-
-
-
 // Task 23 
 
 /*
@@ -1386,49 +1382,18 @@ console.log(count3OrLess("")   				    );//-> 0
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const num = [2, 4, 9, 5, 1 ];
-num.sort();
-console.log(num)
-
-const add = (x, y) => x + y;
-
-console.log(add(5, 10))
 
 
-// Example of a callback function using Promises
-function getData(callback) {
-    return new Promise((resolve, reject) => {
-        // Simulating fetching data asynchronously
-        setTimeout(() => {
-            const data = [1, 2, 3, 4, 5];
-            resolve(data);
-        }, 2000);
-    });
+
+function countA(str) {
+    const newStr = str.split('');
+    let counter = 0;
+
+    for (const char of newStr) {
+        if (char === 'a' || char === 'A') counter++;
+    }
+    
+    return counter;
 }
 
-getData().then(data => {
-    console.log("Data fetched successfully:", data);
-}).catch(error => {
-    console.error("Error fetching data:", error);
-});
-
-
-let x = 10;
-let y = 20;
-obj = {x, y};
-console.log(obj);
-
-
-const arr = [1, 2, 3];
-const newArr = [...arr, 4, 5, 6,];
-console.log(newArr);
-
-const newArr1 = [ 4, 5, 6, ...arr];
-console.log(newArr1);
-
-function HelloW(){
-    console.log('Hello World!')
-};
-
-
-HelloW()
+console.log(countA("TechGlobal is a QA bootcamp")); // Output: 4
