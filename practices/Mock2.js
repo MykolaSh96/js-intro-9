@@ -272,6 +272,7 @@ function swapFirstLastWord(str) {
 
     const firstWord = words[0];
     const lastWord = words[words.length - 1];
+    
     words[0] = lastWord;
     words[words.length - 1] = firstWord;
 
@@ -486,6 +487,13 @@ console.log(countWords("Cypress is an UI automation tool.   "));
 console.log(countWords("1 2 3 4"));
 console.log(countWords(""));
 
+const countWords = str => str.length > 0 ? str.trim().split(' ').length : 0;
+
+
+console.log(countWords("     Javascript is fun   "));
+console.log(countWords("Cypress is an UI automation tool.   "));
+console.log(countWords("1 2 3 4"));
+console.log(countWords(""));
 
 
 // Task 15 
@@ -522,8 +530,28 @@ console.log(factorial(5)); // Output: 120
 console.log(factorial(4)); // Output: 24
 console.log(factorial(0)); // Output: 1
 console.log(factorial(1)); // Output: 1
+console.log(factorial(2)); // Output: 2
 
 
+
+//way 3 (recursion)
+
+const factorial = (num) =>{
+    if(num === 0 || num === 1) return 1
+    else return num * factorial(num - 1)
+ }
+ 
+ const arrFactorial3 = (arr) => arr.map(num => factorial(num));
+
+//way 2
+const arrFactorial2 = (arr) => arr.map(num => {
+    let fact = 1;
+    for (let i = 2; i <= num; i++) {
+        fact *= i;
+    }
+    return fact;
+});
+ 
 // Task 16 
 
 /*
@@ -599,7 +627,7 @@ function removeExtraSpaces(str) {
 
 // Test cases
 console.log(removeExtraSpaces("Hello  ")); // Output: "Hello"
-console.log(removeExtraSpaces("   Hello  World   ")); // Output: "Hello World"
+console.log(removeExtraSpaces("   Hello     World   ")); // Output: "Hello World"
 console.log(removeExtraSpaces("    JavaScript is fun")); // Output: "JavaScript is fun"
 console.log(removeExtraSpaces("")); // Output: ""
 
@@ -688,9 +716,19 @@ firstDuplicate([ 5, '5', 3, 7, 4 ]) -> -1
 firstDuplicate([ 123, 'abc', '123', 3, 'abc' ]) -> 'abc'
 firstDuplicate([ 1, 2, 3]) -> -1
 firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) -> -1
+*/ 
+const firstDuplicate = arr => {
+    for (let elem of arr) {
+        if (arr.indexOf(elem) !== arr.lastIndexOf(elem)) return elem
+    }
+    return -1
+}
+/*
+const firstDuplicate = arr => {
+    const duplicate = arr.find(elem => arr.indexOf(elem) !== arr.lastIndexOf(elem));
+    return duplicate !== undefined ? duplicate : -1;
+};
 */
-
-
 
 
 //Examples:
@@ -720,12 +758,23 @@ getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ]) -> [ 'foo', 'a
 getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ]) -> [ ]
 */
 
+const getDuplicates = (arr) => [...new Set(arr.filter((elem, index) => arr.indexOf(elem) !== index))];
+
+
+const getDuplicates3 = (arr) => {
+    result = [] 
+    for (const elem of arr) {
+        if (arr.indexOf(elem) !== arr.lastIndexOf(elem) && !result.includes(elem)) result.push(elem)
+    }
+    return result
+}
+
 
 //Examples:
-console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])                ); //-> [ 0, -7 ]
-console.log(getDuplicates([ 1, 2, 5, 0, 7 ])                                 ); //-> [ ]
-console.log(getDuplicates(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ])  ); //-> [ 'foo', 'a’ ]
-console.log(getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])                  ); //-> [ ]
+console.log(getDuplicates3([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])                ); //-> [ 0, -7 ]
+console.log(getDuplicates3([ 1, 2, 5, 0, 7 ])                                 ); //-> [ ]
+console.log(getDuplicates3(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ])  ); //-> [ 'foo', 'a’ ]
+console.log(getDuplicates3([ 'foo', '12' , 12, 'bar', 'a' ])                  ); //-> [ ]
 
 // Task 21 
 
@@ -807,6 +856,14 @@ console.log(reverseStringWords("")); // Output: ""
 console.log(reverseStringWords(" ")); // Output: ""
 
 
+function reverseStringWords(str){
+    const words = str.split('');
+    const reverseWords = words.map(word => word.split('')).reverse().join('')
+    return reverseWords;
+  }
+  console.log(reverseStringWords("Hello World"))
+
+
 
 // Task 23 
 
@@ -815,6 +872,7 @@ Count Consonants
 Write a function named as countConsonants() which takes a string word as an argument and 
 returns the count of the consonant letters when invoked.
 NOTE: A letter that is not vowel is considered as a consonant letter.
+
 Examples:
 countConsonants("Hello") -> 3
 countConsonants("Hello World") -> 8
@@ -870,7 +928,7 @@ function countMultipleWords(arr) {
 
 // Test cases
 console.log(countMultipleWords(["foo", "", " ", "foo bar", " foo"]));   // 1
-console.log(countMultipleWords(["foo", "bar", "foobar", " foobar "])); // 0
+console.log(countMultipleWords(["foo", "bar", " foobar", " foobar "])); // 0
 console.log(countMultipleWords(["f o o", "b a r", "foo bar", " foo bar "])); // 4
 console.log(countMultipleWords([])); // 0
 
@@ -1030,9 +1088,10 @@ add([-5, 6, -3, 11], [5, -6, 3, -11]) -> [0, 0, 0, 0]
 
 function add(arr1, arr2) {
     let newArr = [];
+    
     const maxLength = Math.max(arr1.length, arr2.length);
 
-    for(let i = 0; i < arr1.length; i++){
+    for(let i = 0; i < maxLength; i++){
         const sum =(arr1[i] || 0) + (arr2[i] || 0);
         newArr.push(sum);
     }
@@ -1166,12 +1225,33 @@ function no13(arr) {
     return newArr;
 }
 
+
+function no13(arr){
+
+    let newArr = [];
+
+    for ( const number of arr){
+        if (number === 13){
+            newArr.push(0);
+        }else {
+            newArr.push(number);
+        }
+    }
+    return newArr
+}
+
 //Examples:
 console.log(no13([1, 2, 3, 4]));//-> [1, 2, 3 ,4]
 console.log(no13([13, 2, 3]));//-> [0, 2, 3]
 console.log(no13([13, 13, 13, 13, 13]));//-> [0, 0, 0, 0, 0]
 console.log(no13([]));//-> []
 
+const no13 = (arr) => arr.map(num => num === 13 ? 0 : num );
+
+console.log(no13([1, 2, 3, 4]));//-> [1, 2, 3 ,4]
+console.log(no13([13, 2, 3]));//-> [0, 2, 3]
+console.log(no13([13, 13, 13, 13, 13]));//-> [0, 0, 0, 0, 0]
+console.log(no13([]));//-> []
 
 
 // Task-32
@@ -1397,3 +1477,77 @@ function countA(str) {
 }
 
 console.log(countA("TechGlobal is a QA bootcamp")); // Output: 4
+
+
+
+function removeExtraSpaces(str){
+    const word = str.split(' ');
+
+    return  word.filter(word => word !== '').join(' ');
+}
+
+console.log(removeExtraSpaces("  	Hello    World 	"))
+console.log(removeExtraSpaces(" 	JavaScript is fun"))
+
+
+function removeExtraSpaces(str) {
+    const word = str.split(' ');
+
+    return word.filter(word => word !== '').join(' ');
+}
+
+// Test cases
+console.log(removeExtraSpaces("Hello  ")); // Output: "Hello"
+console.log(removeExtraSpaces("   Hello  World   ")); // Output: "Hello World"
+console.log(removeExtraSpaces("    JavaScript is               fun")); // Output: "JavaScript is fun"
+console.log(removeExtraSpaces("")); // Output: ""
+
+
+
+
+
+
+
+function getDuplicates3 (arr) {
+    
+    let result = [];
+    for(const elem of arr ){
+        if(arr.indexOf(elem) !== arr.lastIndexOf(elem) && !result.includes(elem))
+        result.push(elem);
+    }
+    return result
+}
+
+//Examples:
+console.log(getDuplicates3([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])                ); //-> [ 0, -7 ]
+console.log(getDuplicates3([ 1, 2, 5, 0, 7 ])                                 ); //-> [ ]
+console.log(getDuplicates3(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ])  ); //-> [ 'foo', 'a’ ]
+console.log(getDuplicates3([ 'foo', '12' , 12, 'bar', 'a' ])                  ); //-> [ ]
+
+
+const getDuplicates2 = (arr) => {
+    result = []
+    for (const elem of arr) {
+        if (arr.indexOf(elem) !== arr.lastIndexOf(elem) && !result.includes(elem)) result.push(elem)
+    }
+    return result
+}
+
+
+
+
+//Examples:
+console.log(getDuplicates2([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])                ); //-> [ 0, -7 ]
+console.log(getDuplicates2([ 1, 2, 5, 0, 7 ])                                 ); //-> [ ]
+console.log(getDuplicates2(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ])  ); //-> [ 'foo', 'a’ ]
+console.log(getDuplicates2([ 'foo', '12' , 12, 'bar', 'a' ])                  ); //-> [ ]
+
+
+
+function add (str) {
+    str.split(' ')
+   
+    return str.length;
+}
+
+console.log(add(" hello hello eloo"));
