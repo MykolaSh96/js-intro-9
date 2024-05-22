@@ -12,12 +12,8 @@ makeNegative( 0)       	-> 0
 makeNegative(0.45)   	-> -0.45
 */
 
-const makeNegative = num => num > 0 ? -num : num;
+//const makeNegative = num => num > 0 ? -num : num;
 
-console.log(makeNegative(10));// 	      -> -10
-console.log(makeNegative( -7));//	      -> -7
-console.log(makeNegative( 0));// 	      -> 0
-console.log(makeNegative(0.45));//      -> -0.45
 
 
 console.log('\n-------------------------------------------------------------------------------\n');
