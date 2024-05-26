@@ -14,6 +14,16 @@ makeNegative(0.45)   	-> -0.45
 
 //const makeNegative = num => num > 0 ? -num : num;
 
+const makeNegative = (num) =>{
+   if(num <= 0)return num;
+   else return -num;
+
+} 
+
+console.log(makeNegative(10));// 	      -> -10
+console.log(makeNegative( -7));//	      -> -7
+console.log(makeNegative( 0));// 	      -> 0
+console.log(makeNegative(0.45));//      -> -0.45
 
 
 console.log('\n-------------------------------------------------------------------------------\n');
@@ -28,7 +38,15 @@ isSumEvenOrOdd(0, 0, 0) 	-> "even"
 isSumEvenOrOdd(7, 1, 9)       	-> "odd"
 isSumEvenOrOdd(1, 1, 1)       	-> "odd"
 */
-const isSumEvenOrOdd = (num1, num2, num3) => (num1 + num2 + num3) % 2 === 0 ? 'even' : 'odd';
+//const isSumEvenOrOdd = (num1, num2, num3) => (num1 + num2 + num3) % 2 === 0 ? 'even' : 'odd';
+
+
+const isSumEvenOrOdd = (num1,num2,num3) =>{
+   if((num1 + num2 + num3)  % 2 === 0) return 'even';
+   else{
+      return 'odd'
+   }  
+}
 
 console.log(isSumEvenOrOdd(0, 1, 4));// 	-> "odd"
 console.log(isSumEvenOrOdd(0, -1, -5));// -> "even"
@@ -41,7 +59,8 @@ console.log('\n-----------------------------------------------------------------
 console.log('Task - 3');
 console.log('\n-------------------------------------------------------------------------------\n');
 /* Task-3
-Write a function named decimal2() which takes an array of numbers as an argument and returns the array with the same numbers rounded up or down
+Write a function named decimal2() which takes an array of numbers as an argument
+ and returns the array with the same numbers rounded up or down
 and represented with only two decimals.
 Examples:
 decimal2( [94.356, 8.9752] ) 		-> [ 94.36, 8.98 ]
@@ -60,7 +79,7 @@ console.log(decimal2( [ ] ));// 			-> [  ]
 console.log(decimal2( [4.35623, 8.9742] ));// 		           -> [ 4.36, 8.97 ]
 
 
-console.log('\n============Task-3============');
+console.log('\n============Task-3============\n');
 
 
 console.log('\n-------------------------------------------------------------------------------\n');

@@ -30,7 +30,7 @@ else {
 }
 
 
-console.log('\n---------------Task 3-----------------');
+console.log('\n---------------Task 3-----------------\n');
 
 function hasA(str) {
     return (str.includes('A') || str.includes('a'));

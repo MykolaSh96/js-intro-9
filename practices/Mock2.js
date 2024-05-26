@@ -1543,11 +1543,3 @@ console.log(getDuplicates2(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ])  );
 console.log(getDuplicates2([ 'foo', '12' , 12, 'bar', 'a' ])                  ); //-> [ ]
 
 
-
-function add (str) {
-    str.split(' ')
-   
-    return str.length;
-}
-
-console.log(add(" hello hello eloo"));

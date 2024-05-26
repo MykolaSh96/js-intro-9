@@ -50,3 +50,12 @@ class Customer {
   for (customer of [customer1, vipCustomer, businessCustomer]) {
     console.log(customer.getDetails())
   }
+
+
+
+
+
+
+
+
+  
