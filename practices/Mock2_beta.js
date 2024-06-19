@@ -50,3 +50,10 @@ console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));// -> [
 console.log(removeDuplicates(["1", "2", "3", "2", "3"]));// -> ["1", "2", "3"]
 
 
+
+function reverseStringwords(str){
+    const words = str.split('')
+    const reversedWords = words.map(word => word.split('')).reverse().join('');
+      return reversedWords
+  }
+  console.log(reverseStringwords('Hello World'))
